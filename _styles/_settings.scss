@@ -1,0 +1,341 @@
+#settingsIcon {
+    display: block;
+    float: right;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    .icon {
+        width: 20px;
+        height: 20px;
+        margin: 20px;
+        fill: #fff;
+    }
+}
+
+#settings {
+    position: absolute;
+    z-index: 40;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    text-align: left;
+    background: #333;
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    &.is-closed,
+    &.is-open {
+        visibility: visible;
+        -webkit-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+    }
+    &.is-closed {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    &.is-open {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+    #helpIcon {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        .icon {
+            fill: #fff;
+            margin: 20px;
+            opacity: 0.5;
+        }
+    }
+    .inner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .rate {
+        height: 120px;
+        background: #099;
+        * {
+            color: #fff;
+            fill: #fff;
+        }
+        .icon {
+            top: 20px;
+            &-cost {
+                left: 30px;
+            }
+        }
+        .input {
+            top: auto;
+            margin-top: 0;
+            bottom: 10px;
+        }
+    }
+    #helpPanel {
+        background: #210;
+        max-height: 200px;
+        overflow: hidden;
+        -webkit-transition: all 300ms ease-in-out;
+                transition: all 300ms ease-in-out;
+        .text {
+            display: block;
+            padding: 20px;
+            color: #f90;
+            font-size: 14px;
+            line-height: 20px;
+            &:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+        }
+        .close {
+            display: block;
+            float: right;
+            margin-top: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: solid 2px #f90;
+            cursor: pointer;
+        }
+        &.is-closed {
+            max-height: 0;
+        }
+    }
+    .rates {
+        .row {
+            padding: 15px 20px;
+            background: #fff;
+            position: relative;
+            &:nth-child(even) {
+                background: #f6f6f6;
+            }
+            .sup {
+                display: block;
+                position: absolute;
+                height: 20px;
+                text-align: right;
+                top: 0;
+                right: 0;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .star {
+                display: block;
+                position: absolute;
+                top: 15px;
+                left: 20px;
+                svg {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    fill: #f90;
+                }
+                span {
+                    display: block;
+                    position: relative;
+                    z-index: 10;
+                    width: 20px;
+                    height: 20px;
+                    margin: 12px 10px 0;
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    cursor: default;
+                }
+                &:before {
+                    content: '=';
+                    display: block;
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: 10px;
+                    right: -25px;
+                    color: #999;
+                    font-size: 18px;
+                    line-height: 20px;
+                    text-align: center;
+                    font-weight: normal;
+                }
+            }
+            .input {
+                display: block;
+                height: 40px;
+                width: 40%;
+                min-width: 80px;
+                margin: 0 auto;
+                position: relative;
+                border-bottom: solid 3px #099;
+                input {
+                    position: relative;
+                    text-align: center;
+                    color: #099;
+                    font-size: 24px;
+                    height: 40px;
+                    top: -2px;
+                }
+                .sup {
+                    display: block;
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: 5px;
+                    right: -3px;
+                    color: #099;
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                &:before,
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    height: 6px;
+                    width: 3px;
+                    background-color: #099;
+                }
+                &:before {
+                    left: 0;
+                }
+                &:after {
+                    right: 0;
+                }
+            }
+            .val {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                height: 40px;
+                width: 40px;
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 40px;
+                color: #999;
+                text-align: right;
+                &:before {
+                    content: '=';
+                    display: block;
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: 10px;
+                    left: -20px;
+                    font-size: 18px;
+                    line-height: 20px;
+                    text-align: center;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    .work-times {
+        padding: 20px 20px 10px;
+        background: #f6f6f6;
+        position: relative;
+        .work-day,
+        .work-week {
+            display: block;
+            float: left;
+            position: relative;
+            label {
+                display: block;
+                float: left;
+                width: 100%;
+                padding: 0;
+                font-size: 12px;
+                line-height: 15px;
+                color: #999;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+        .work-day {
+            width: 60%;
+        }
+        .work-week {
+            width: 40%;
+        }
+        .icon {
+            display: block;
+            width: 10px;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            pointer-events: none;
+            fill: #099;
+        }
+        select {
+            display: block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+            color: #099;
+            padding-left: 16px;
+            background-color: transparent;
+        }
+    }
+    .btn {
+        display: block;
+        font-size: 16px;
+        padding: 20px;
+        margin: 0;
+        background-color: #f90;
+        color: #fff;
+    }
+
+    .footer {
+        display: block;
+        position: relative;
+        background-color: #333;
+        color: #666;
+        text-transform: uppercase;
+        padding: 20px 20px 0;
+        &:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+        .copyright {
+            display: block;
+            float: left;
+            padding: 20px 0;
+            color: #666;
+        }
+        .author {
+            display: block;
+            float: right;
+            padding: 20px 0;
+            line-height: 20px;
+            .icon {
+                width: 96px;
+                height: 16px;
+                fill: #666;
+            }
+        }
+    }
+}

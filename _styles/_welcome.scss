@@ -1,0 +1,107 @@
+#welcome {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #009999;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    &.first-time,
+    &.is-open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+    }
+    &.is-open,
+    &.is-closed {
+        -webkit-transition: all 600ms ease-in-out;
+        transition: all 600ms ease-in-out;
+    }
+    &.is-closed {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .intro {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 200px;
+        left: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .outer {
+        display: table;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .inner {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 60px 40px;
+    }
+    .rate {
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        * {
+            color: #099;
+            fill: #099;
+        }
+        .input {
+            .icon-cost {
+                left: 40px;
+            }
+        }
+    }
+    label {
+        color: #fff;
+    }
+    .logo {
+        display: block;
+        position: relative;
+        width: 220px;
+        height: 80px;
+        margin: 0 auto 20px;
+        fill: #fff;
+    }
+    p {
+        display: block;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 10px auto 0;
+        color: #fff;
+    }
+    .btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 16px;
+        color: #fff;
+        background: #f90;
+        width: 100%;
+        padding: 20px;
+    }
+    .version {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}

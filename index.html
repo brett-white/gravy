@@ -1,0 +1,422 @@
+<!doctype html>
+<html manifest="gravy.appcache" itemscope itemtype="http://schema.org/WebApplication">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cost vs Time vs Quality</title>
+
+    <meta name="application-name" content="Gravy">
+    <meta name="apple-mobile-web-app-title" content="Gravy">
+
+    <meta name="designer" content="PEXCIL" />
+
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Gravy">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="description" content="A free and easy tool to factor quality into your cost and time estimations." />
+    <meta name="keywords" content="calculator, quality calculator, value calculator, cost calculator, budget calculator, price calculator, hourly rate calculator, time calculator, hours calculator, time calculator, deadline calculator, project calculator"
+    />
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#009999">
+
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link rel="icon" sizes="192x192" href="images/icon-192x192.png" />
+    <link rel="icon" sizes="128x128" href="images/icon-128x128.png" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icon-57x57.png" />
+
+    <link rel="stylesheet" href="dist/gravy.css" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Gravy">
+    <meta itemprop="description" content="A free and easy tool to factor quality into your cost and time estimations.">
+    <meta itemprop="image" content="http://gravy.pexcil/images/gravy.jpg">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:title" content="Gravy">
+    <meta name="twitter:description" content="A free and easy tool to factor quality into your cost and time estimations.">
+    <meta name="twitter:image" content="http://gravy.pexcil.com/images/gravy.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="http://gravy.pexcil.com/">
+    <meta name="twitter:creator" content="@_pexcil">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Gravy" />
+    <meta property="og:description" content="A free and easy tool to factor quality into your cost and time estimations." />
+    <meta property="og:type" content="web application" />
+    <meta property="og:url" content="http://gravy.pexcil.com/" />
+    <meta property="og:image" content="http://gravy.pexcil/images/gravy.jpg" />
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-7936728-58', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="loading">
+
+    <!-- SVG ICONS -->
+    <svg class="hide">
+        <symbol id="gravy" viewBox="0 0 44 16">
+            <path d="M43.4,9.7h-1.1L44,4.8h-3.4l-1.7,4.9H37l1.8-4.9h-5.1l-3.5,4.6L30,4.8h-3.4l0.3,4.9H24l1.8-4.9h-5.4c-1.3,0-2.5,0.3-3.4,1
+            	c-1,0.8-1.5,1.8-1.5,3.1c0,0.3,0,0.6,0.1,0.9h-1.5l1.8-5H8.2L6.5,9.7c-0.7,0-1.4-0.1-1.9-0.5C3.8,8.7,3.4,7.8,3.4,6.7
+            	c0-1.3,0.5-2.5,1.5-3.6c1-1.2,2.2-1.7,3.4-1.7h0.2C8.4,1.6,8.4,1.7,8.4,1.9c0,0.6,0.2,1,0.7,1.4c0.4,0.4,0.9,0.5,1.5,0.5
+            	s1.1-0.2,1.5-0.5c0.4-0.4,0.7-0.8,0.7-1.4c0-0.1,0-0.1,0-0.2l0,0C12.4,0.2,10,0,9.1,0H8.7C7.1,0,5.6,0.3,4.2,1
+            	C2.7,1.8,1.6,2.8,0.8,4.1C0.3,5.1,0,6,0,6.9c0,1.6,0.8,2.8,2.4,3.5c0.4,0.2,0.8,0.3,1.2,0.4L3.2,11c-0.4,0.3-0.7,0.6-0.9,1.1
+            	c-0.2,0.5-0.3,1-0.3,1.5c0,0.7,0.2,1.2,0.6,1.6C3,15.8,3.7,16,4.5,16c1.3,0,2.4-0.5,3.3-1.6c0.6-0.7,1-1.4,1.5-2.8
+            	c0,0,1.3-3.9,1.8-5.3H12l-1,3.2c-0.1,0.2-0.1,0.5-0.1,0.7c0,0.8,0.5,1.2,1.5,1.2H18c1,0,1.8-0.4,2.5-1.2c0,0.7,0.5,1,1.5,1h8.7
+            	l4-4.9l-1.1,3c-0.1,0.2-0.1,0.4-0.1,0.5c0,0.4,0.1,0.7,0.4,1c0.3,0.2,0.6,0.4,1,0.4h0.7c-0.4,0.3-0.6,0.5-0.9,1
+            	c-0.2,0.5-0.3,1-0.3,1.5c0,0.6,0.2,1.2,0.6,1.6c0.4,0.5,1,0.7,1.8,0.7c1.2,0,2.3-0.5,3.1-1.5c0.6-0.7,1.2-1.7,1.7-3.2H43
+            	c0.4,0,0.8-0.3,1-0.8C44.1,10,43.8,9.7,43.4,9.7z M5,13.6l-0.3,0.9c-0.4-0.3-0.6-0.6-0.6-1.1s0.2-1,0.6-1.5s0.8-0.7,1.2-0.7L5,13.6z
+            	 M22.7,7.2l-1.1,0.9c-0.1,0-0.1,0.1-0.1,0.2l-0.1,1.2c0,0.2-0.2,0.3-0.3,0.2l-0.9-0.6c-0.1,0-0.1,0-0.2,0l-1.2,0.6
+            	c-0.2,0.1-0.3-0.1-0.2-0.2L19,8.3c0-0.1,0-0.1,0-0.2l-0.7-0.9c-0.1-0.1,0-0.3,0.2-0.3l1.3-0.2c0.1,0,0.1-0.1,0.2-0.1l0.9-1.1
+            	c0.1-0.1,0.3-0.1,0.3,0l0.3,1.1c0,0.1,0,0.1,0.1,0.1l1.2,0.2C22.9,6.9,22.9,7.1,22.7,7.2z M37.1,14.5c-0.4-0.3-0.5-0.6-0.5-1
+            	c0-0.5,0.2-0.9,0.5-1.4c0.4-0.5,0.7-0.7,1.2-0.7L37.1,14.5z"/>
+        </symbol>
+        <symbol id="clock" viewBox="0 0 16 16">
+            <path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M11.2,12.3L7.4,8.6C7.3,8.4,7.2,8.2,7.2,8V2.7h1.6v5l3.5,3.5
+            	L11.2,12.3z"/>
+        </symbol>
+        <symbol id="wallet" viewBox="0 0 16 16">
+            <path d="M15,6.7C15,6.7,15,6.7,15,6.7l0-3c0.1-0.6-0.4-1.2-1.1-1.2H1.3V1.8c0-0.3,0.3-0.6,0.6-0.6h10.7c0-0.6-0.5-1.2-1.2-1.2H1.2
+            	C0.6-0.1,0,0.5,0,1.1v13.6C0,15.4,0.5,16,1.2,16h12.6c0.6,0,1.2-0.5,1.2-1.2v-3.1c0,0,0,0,0,0c0.6,0,1-0.4,1-1v-3
+            	C16,7.2,15.6,6.7,15,6.7z M12.5,10.7c-0.8,0-1.5-0.7-1.5-1.5c0-0.8,0.7-1.5,1.5-1.5S14,8.4,14,9.2C14,10,13.4,10.7,12.5,10.7z"/>
+        </symbol>
+        <symbol id="star" viewBox="0 0 16 16">
+            <path d="M8.7,0.7l1.9,4c0.1,0.2,0.2,0.4,0.5,0.4l4.3,0.6c0.6,0.1,0.8,0.8,0.4,1.1L12.7,10c-0.2,0.2-0.2,0.4-0.2,0.6l0.7,4.3
+    			c0.1,0.6-0.5,1-1,0.6l-3.9-2c-0.2-0.1-0.4-0.1-0.6,0l-3.8,2c-0.5,0.2-1.1-0.2-1-0.6l0.7-4.3c0.1-0.2-0.1-0.5-0.2-0.6L0.2,6.9
+    			C-0.2,6.5,0,5.8,0.6,5.8L5,5.1C5.2,5,5.4,5,5.5,4.7l1.9-4C7.7,0.2,8.4,0.2,8.7,0.7z"/>
+        </symbol>
+        <symbol id="cog" viewBox="0 0 16 16">
+            <path d="M15.2,6.4h-0.4c-0.3,0-0.6-0.2-0.8-0.6c-0.1-0.2-0.2-0.4-0.2-0.6c-0.2-0.3-0.1-0.7,0.2-1L14.2,4c0.3-0.3,0.3-0.8,0-1.1
+            	l-1.1-1.1c-0.3-0.3-0.8-0.3-1.1,0l-0.3,0.3c-0.2,0.2-0.6,0.3-1,0.2c-0.2-0.1-0.4-0.2-0.6-0.2C9.8,1.8,9.6,1.6,9.6,1.2V0.8
+            	C9.6,0.3,9.3,0,8.8,0H7.2C6.7,0,6.4,0.3,6.4,0.8v0.4c0,0.3-0.2,0.6-0.6,0.8C5.7,2.1,5.4,2.2,5.3,2.2C5,2.4,4.6,2.3,4.3,2.1L4.1,1.8
+            	C3.8,1.4,3.3,1.4,3,1.8L1.8,2.9C1.4,3.2,1.4,3.7,1.8,4l0.3,0.3c0.2,0.2,0.3,0.6,0.2,1C2.2,5.4,2.1,5.7,2,5.8
+            	C1.8,6.2,1.6,6.4,1.2,6.4H0.8C0.3,6.4,0,6.7,0,7.2v1.6c0,0.5,0.3,0.8,0.8,0.8h0.4c0.3,0,0.6,0.2,0.8,0.6c0.1,0.2,0.2,0.4,0.2,0.6
+            	c0.2,0.3,0.1,0.7-0.2,1L1.8,12c-0.3,0.3-0.3,0.8,0,1.1l1.1,1.1c0.3,0.3,0.8,0.3,1.1,0l0.3-0.3c0.2-0.2,0.6-0.3,1-0.2
+            	c0.2,0.1,0.4,0.2,0.6,0.2c0.3,0.2,0.6,0.4,0.6,0.8v0.4c0,0.5,0.3,0.8,0.8,0.8h1.6c0.5,0,0.8-0.3,0.8-0.8v-0.4c0-0.3,0.2-0.6,0.6-0.8
+            	c0.2-0.1,0.4-0.2,0.6-0.2c0.3-0.2,0.7-0.1,1,0.2l0.3,0.3c0.3,0.3,0.8,0.3,1.1,0l1.1-1.1c0.3-0.3,0.3-0.8,0-1.1l-0.3-0.3
+            	c-0.2-0.2-0.3-0.6-0.2-1c0.1-0.2,0.2-0.4,0.2-0.6c0.1-0.3,0.4-0.6,0.8-0.6h0.4c0.5,0,0.8-0.3,0.8-0.8V7.2C16,6.7,15.7,6.4,15.2,6.4z
+            	 M10.1,8.4c-0.2,0.8-0.9,1.5-1.7,1.7c-1.5,0.3-2.8-1-2.5-2.5c0.2-0.8,0.9-1.5,1.7-1.7C9.1,5.6,10.4,6.9,10.1,8.4z"/>
+        </symbol>
+        <symbol id="help" viewBox="0 0 16 16">
+            <path d="M8,0C3.5,0,0,3.5,0,8s3.5,8,8,8s8-3.5,8-8S12.5,0,8,0z M8,13c-0.6,0-1-0.5-1-1c0-0.6,0.5-1,1-1c0.6,0,1,0.5,1,1
+            	C9,12.6,8.6,13,8,13z M9.6,7.9L9.6,7.9C9,8.2,8.7,8.7,8.7,9.4c0,0.5-0.4,0.8-0.8,0.8c-0.4,0-0.8-0.4-0.8-0.8c0.1-1,0.7-2,1.7-2.5
+            	l0,0c0.5-0.2,0.7-0.7,0.7-1.2c0-0.8-0.6-1.4-1.5-1.4S6.5,4.8,6.5,5.6c0,0.5-0.4,0.8-0.8,0.8S4.8,6.1,4.8,5.6C4.8,4.2,6.2,3,8,3
+            	s3.2,1.2,3.2,2.6C11.2,6.6,10.6,7.4,9.6,7.9z"/>
+        </symbol>
+        <symbol id="select" viewBox="0 0 8 16">
+            <path d="M5.8,5.7L4,7.5L2.2,5.7c-0.5-0.5-1.3-0.5-1.8,0s-0.5,1.3,0,1.8l2.7,2.7c0.5,0.5,1.3,0.5,1.8,0l2.7-2.7
+            	c0.5-0.5,0.5-1.3,0-1.8C7.1,5.2,6.3,5.2,5.8,5.7z"/>
+        </symbol>
+        <symbol id="clear" viewBox="0 0 16 16">
+            <path d="M14,2H6C5.5,2,5,2.1,4.6,2.6l-4,4c-0.8,0.8-0.8,2,0,2.8l4,4C4.9,13.8,5.5,14,6,14h8c1.1,0,2-0.9,2-2V4C16,2.9,15.1,2,14,2z
+            	 M12.2,11.6L9.9,9.3l-2.3,2.3l-1.4-1.4L8.4,8L6.1,5.7l1.4-1.4l2.3,2.2l2.2-2.2l1.4,1.4L11.3,8l2.3,2.2L12.2,11.6z"/>
+        </symbol>
+        <symbol id="equals" viewBox="0 0 16 16">
+            <path d="M1.6,5.6h12.8C15.3,5.6,16,4.9,16,4s-0.7-1.6-1.6-1.6H1.6C0.7,2.4,0,3.1,0,4S0.7,5.6,1.6,5.6z"/>
+            <path d="M14.4,10.4H1.6C0.7,10.4,0,11.1,0,12s0.7,1.6,1.6,1.6h12.8c0.9,0,1.6-0.7,1.6-1.6S15.3,10.4,14.4,10.4z"/>
+        </symbol>
+        <symbol id="twitter" viewBox="0 0 16 16">
+            <path d="M16,3c-0.6,0.3-1.2,0.4-1.9,0.5c0.7-0.4,1.2-1,1.5-1.8c-0.6,0.4-1.3,0.6-2.1,0.7c-0.6-0.6-1.5-1-2.4-1
+        		C9.3,1.5,7.9,3,7.9,4.7c0,0.3,0,0.5,0.1,0.7C5.1,5.4,2.8,4,1.1,2C0.9,2.5,0.7,3,0.7,3.7c0,1.2,0.6,2.1,1.5,2.8
+        		c-0.5,0-1-0.2-1.5-0.4c0,0,0,0,0,0.1c0,1.6,1.2,2.9,2.6,3.2C3.1,9.4,2.7,9.4,2.4,9.4c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.2,3.1,2.3
+        		c-1.2,0.9-2.6,1.4-4.1,1.4c-0.3,0-0.5,0-0.7-0.1c1.5,1,3.2,1.5,5.1,1.5c6,0,9.4-5,9.4-9.4c0-0.1,0-0.3,0-0.4C15,4.3,15.6,3.8,16,3z
+        		"/>
+        </symbol>
+        <symbol id="paypal" viewBox="0 0 16 16">
+            <path d="M14.2,4.7c-0.7,3.3-3,5.1-6.6,5.1H6.3l-0.7,4.6c-0.1,0.4-0.4,0.7-0.8,0.7H4.6l-0.1,0.5c0,0.2,0.1,0.4,0.4,0.4h2.6
+            	c0.3,0,0.6-0.2,0.6-0.5l0-0.1l0.5-3.1l0-0.2c0-0.3,0.3-0.5,0.6-0.5h0.4c2.5,0,4.5-1,5-4C14.9,6.4,14.8,5.4,14.2,4.7z"/>
+            <path id="path14527_1_" d="M12.8,1.2C12,0.4,10.7,0,9,0H4C3.6,0,3.4,0.3,3.3,0.6L1.2,13.7c0,0.3,0.2,0.5,0.4,0.5h3.1l0.8-4.9l0,0.2
+            	c0.1-0.3,0.4-0.6,0.7-0.6h1.5c2.9,0,5.1-1.2,5.8-4.5c0-0.1,0-0.2,0.1-0.3c-0.1,0-0.1,0,0,0C13.6,2.8,13.4,2,12.8,1.2"/>
+        </symbol>
+        <symbol id="codePlusLove" viewBox="0 0 96 16">
+            <path d="M58.1,0.1c-2.5,0-4.6,2.1-4.6,4.6c0-2.5-2.1-4.6-4.6-4.6s-4.6,2.1-4.6,4.6c0,7.5,9.1,11.4,9.1,11.4s9.1-3.9,9.1-11.4
+        		C62.8,2.1,60.7,0.1,58.1,0.1z"/>
+        	<path d="M19.9,0.5c-0.6-0.6-1.6-0.6-2.2,0c-0.6,0.6-0.6,1.6,0,2.2l5.2,5.4l-5.2,5.2c-0.6,0.6-0.6,1.6,0,2.2
+        		c0.3,0.3,0.7,0.4,1.2,0.4s0.9-0.1,1.1-0.4l6.4-6.4c0.6-0.6,0.6-1.6,0-2.2L19.9,0.5z"/>
+        	<path d="M9.2,0.5c-0.6-0.6-1.6-0.6-2.2,0L0.5,6.9c-0.6,0.6-0.6,1.6,0,2.2l6.4,6.4C7.2,15.9,7.7,16,8.1,16s0.9-0.1,1.1-0.5
+        		c0.6-0.6,0.6-1.6,0-2.2L3.9,8l5.2-5.2C9.9,2.1,9.9,1.1,9.2,0.5z"/>
+        	<path d="M39.1,7.2h-2.2V5c0-0.5-0.4-0.9-0.9-0.9S35.1,4.5,35.1,5v2.2h-2.2c-0.5,0-0.9,0.4-0.9,0.9S32.4,9,32.9,9h2.2v2.2
+        		c0,0.5,0.4,0.9,0.9,0.9s0.9-0.4,0.9-0.9V9h2.2C39.6,9,40,8.6,40,8.1S39.5,7.2,39.1,7.2z"/>
+        	<path d="M74.1,5.6h-6.2C67.4,5.6,67,6,67,6.5s0.4,0.9,0.9,0.9h6.2C74.6,7.4,75,7,75,6.5S74.6,5.6,74.1,5.6z"/>
+        	<path d="M74.1,8.7h-6.2c-0.5,0-0.9,0.4-0.9,0.9s0.4,0.9,0.9,0.9h6.2c0.5,0,0.9-0.4,0.9-0.9S74.6,8.7,74.1,8.7z"/>
+        	<path d="M80,0v16h16V0H80z M94.4,14.4H88V8h-6.4V1.6h12.8V14.4z"/>
+        </symbol>
+    </svg>
+
+    <div id="calculator">
+        <div class="mask">
+            <aside id="settings">
+                <div class="inner">
+                    <div id="helpIcon">
+                        <svg class="icon"><use xlink:href="#help" /></svg>
+                    </div>
+                    <div id="settingsRate" class="section rate">
+                        <div class="label">
+                            <label for="hourlyRate">hourly rate</label>
+                        </div>
+                        <div class="input">
+                            <svg class="icon icon-time"><use xlink:href="#clock" /></svg>
+                            <svg class="icon icon-cost"><use xlink:href="#wallet" /></svg>
+                            <input type="number" pattern="[0-9.]" id="hourlyRate">
+                        </div>
+                    </div>
+                    <div id="helpPanel">
+                        <span class="text">
+                            <p>Great quality takes that little bit
+                                <strong>extra</strong>. Extra time, effort, materials, resources, expertise, experience... you name it. Adjust the percentages below to add some extra
+                                <strong>gravy</strong> into your estimates.</p>
+                            <div id="gotIt" class="close">got it</div>
+                        </span>
+                    </div>
+                    <div class="rates">
+                        <div id="row5" class="row">
+                            <div class="star">
+                                <svg><use xlink:href="#star" /></svg>
+                                <span>5</span>
+                            </div>
+                            <div class="input">
+                                <span class="sup">%</span>
+                                <input type="number" pattern="[0-9.]" id="ratio5" value="100">
+                            </div>
+                            <div id="star5Val" class="val"></div>
+                        </div>
+                        <div id="row4" class="row">
+                            <div class="star">
+                                <svg><use xlink:href="#star" /></svg>
+                                <span>4</span>
+                            </div>
+                            <div class="input">
+                                <span class="sup">%</span>
+                                <input type="number" pattern="[0-9.]" id="ratio4" value="90">
+                            </div>
+                            <div id="star4Val" class="val"></div>
+                        </div>
+                        <div id="row3" class="row">
+                            <div class="star">
+                                <svg><use xlink:href="#star" /></svg>
+                                <span>3</span>
+                            </div>
+                            <div class="input">
+                                <span class="sup">%</span>
+                                <input type="number" pattern="[0-9.]" id="ratio3" value="80">
+                            </div>
+                            <div id="star3Val" class="val"></div>
+                        </div>
+                        <div id="row2" class="row">
+                            <div class="star">
+                                <svg><use xlink:href="#star" /></svg>
+                                <span>2</span>
+                            </div>
+                            <div class="input">
+                                <span class="sup">%</span>
+                                <input type="number" pattern="[0-9.]" id="ratio2" value="70">
+                            </div>
+                            <div id="star2Val" class="val"></div>
+                        </div>
+                        <div id="row1" class="row">
+                            <div class="star">
+                                <svg><use xlink:href="#star" /></svg>
+                                <span>1</span>
+                            </div>
+                            <div class="input">
+                                <span class="sup">%</span>
+                                <input type="number" pattern="[0-9.]" id="ratio1" value="60">
+                            </div>
+                            <div id="star1Val" class="val"></div>
+                        </div>
+                    </div>
+                    <div class="work-times">
+                        <div class="work-day">
+                            <label for="workDay">work day</label>
+                            <svg class="icon select"><use xlink:href="#select" /></svg>
+                            <select name="workDay" id="workDay">
+                                <option value="1">1 Hour</option>
+                                <option value="2">2 Hours</option>
+                                <option value="3">3 Hours</option>
+                                <option value="4">4 Hours</option>
+                                <option value="5">5 Hours</option>
+                                <option value="6">6 Hours</option>
+                                <option value="7">7 Hours</option>
+                                <option value="8">8 Hours</option>
+                                <option value="9">9 Hours</option>
+                                <option value="10">10 Hours</option>
+                                <option value="11">11 Hours</option>
+                                <option value="12">12 Hours</option>
+                                <option value="13">13 Hours</option>
+                                <option value="14">14 Hours</option>
+                                <option value="15">15 Hours</option>
+                                <option value="16">16 Hours</option>
+                                <option value="17">17 Hours</option>
+                                <option value="18">18 Hours</option>
+                                <option value="19">19 Hours</option>
+                                <option value="20">20 Hours</option>
+                                <option value="21">21 Hours</option>
+                                <option value="22">22 Hours</option>
+                                <option value="23">23 Hours</option>
+                                <option value="24">24 Hours</option>
+                            </select>
+                        </div>
+
+                        <div class="work-week">
+                            <label for="workWeek">work week</label>
+                            <svg class="icon select"><use xlink:href="#select" /></svg>
+                            <select name="workWeek" id="workWeek">
+                                <option value="1">1 Day</option>
+                                <option value="2">2 Days</option>
+                                <option value="3">3 Days</option>
+                                <option value="4">4 Days</option>
+                                <option value="5">5 Days</option>
+                                <option value="6">6 Days</option>
+                                <option value="7">7 Days</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="save" class="btn">done</div>
+
+                    <footer class="footer">
+                        <!-- <div class="social">
+                            <a class="button twitter" href="https://www.twitter.com/_pexcil" target="_blank">
+                                <svg class="icon"><use xlink:href="#twitter" /></svg>
+                            </a>
+                            <div class="button paypal">
+                                <svg class="icon"><use xlink:href="#paypal" /></svg>
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                                    <input type="hidden" name="cmd" value="_s-xclick">
+                                    <input type="hidden" name="hosted_button_id" value="5B8VF6N8AB236">
+                                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                            </div>
+                        </div> -->
+                        <span class="copyright">&copy; 2015 PEXCIL&trade;.</span>
+                        <a class="author" href="http://www.pexcil.com" target="_blank">
+                            <svg class="icon"><use xlink:href="#codePlusLove" /></svg>
+                        </a>
+                    </footer>
+                </div>
+            </aside>
+
+            <div id="overlay"></div>
+
+            <div id="welcome">
+                <div class="intro">
+                    <div class="outer">
+                        <div class="inner">
+                            <svg class="logo"><use xlink:href="#gravy" /></svg>
+                            <p>A <strong>free</strong> and <strong>easy</strong> tool to factor  <strong>quality</strong> into your <strong>cost</strong> &amp; <strong>time</strong> estimates.</p>
+                            <p>Everyone likes a bit of <strong>Gravy</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="welcomeRate" class="section rate">
+                    <div class="label">
+                        <label for="setRate">hourly rate</label>
+                    </div>
+                    <div class="input">
+                        <svg class="icon icon-time icon-large"><use xlink:href="#clock" /></svg>
+                        <svg class="icon icon-cost icon-large"><use xlink:href="#wallet" /></svg>
+                        <input type="number" pattern="[0-9.]" id="setRate">
+                    </div>
+                </div>
+                <div id="go" class="btn">continue</div>
+            </div>
+
+            <header class="header">
+                <svg id="logo" class="logo"><use xlink:href="#gravy" /></svg>
+                <div id="settingsIcon">
+                    <svg class="icon"><use xlink:href="#cog" /></svg>
+                </div>
+            </header>
+
+            <div class="sections">
+                <div class="section cost">
+                    <div id="costLabel" class="label">
+                        <label for="cost">cost</label>
+                    </div>
+                    <div class="input">
+                        <svg id="costIcon" class="icon icon-cost icon-large"><use xlink:href="#wallet" /></svg>
+                        <input type="number" pattern="[0-9.]" id="cost" />
+                    </div>
+                </div>
+                <div class="section time">
+                    <div id="timeLabel" class="label">
+                        <svg class="icon select"><use xlink:href="#select" /></svg>
+                        <select name="timeType" id="timeType">
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                            <option value="weeks">Weeks</option>
+                        </select>
+                    </div>
+                    <p class="times"></p>
+                    <div class="input">
+                        <svg id="timeIcon" class="icon icon-time icon-large white"><use xlink:href="#clock" /></svg>
+                        <input type="number" pattern="[0-9.]" id="time">
+                    </div>
+                </div>
+                <div class="section quality">
+                    <fieldset id="stars">
+                        <input type="radio" id="star1" name="star" value="1" />
+                        <label for="star1">
+                            <svg class="star" viewBox="0 0 16 16"><use xlink:href="#star" /></svg>
+                        </label>
+                        <input type="radio" id="star2" name="star" value="2" />
+                        <label for="star2">
+                            <svg class="star"settingsIcon><use xlink:href="#star" /></svg>
+                        </label>
+                        <input type="radio" id="star3" name="star" value="3" />
+                        <label for="star3">
+                            <svg class="star"settingsIcon><use xlink:href="#star" /></svg>
+                        </label>
+                        <input type="radio" id="star4" name="star" value="4" />
+                        <label for="star4">
+                            <svg class="star"settingsIcon><use xlink:href="#star" /></svg>
+                        </label>
+                        <input type="radio" id="star5" name="star" value="5" />
+                        <label for="star5">
+                            <svg class="star"settingsIcon><use xlink:href="#star" /></svg>
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="btns">
+                <div id="clearBtn" class="btn clear">
+                    <svg class="icon icon-large"><use xlink:href="#clear" /></svg>
+                </div>
+                <div id="calcBtn" class="btn calc">
+                    <svg class="icon icon-equals"><use xlink:href="#equals" /></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/gravy.min.js"></script>
+</body>
+
+</html>

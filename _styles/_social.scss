@@ -1,0 +1,51 @@
+
+.social {
+    font-size: 0;
+    padding: 0 5px;
+    fill: #666;
+    .button {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        height: 50px;
+        padding: 15px;
+        overflow: hidden;
+        border: solid 1px #666;
+        text-align: center;
+        position: relative;
+        .icon {
+            display: inline-block;
+            vertical-align: top;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .twitter {
+        left: -5px;
+    }
+    .paypal {
+        left: 5px;
+        outline: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        outline: none;
+        box-shadow: none;
+        border-radius: 0;
+        background: transparent;
+        cursor: pointer;
+        .icon {
+            width: 80px;
+            height: 20px;
+        }
+        form {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+}
